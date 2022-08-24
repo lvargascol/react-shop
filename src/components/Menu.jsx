@@ -1,9 +1,19 @@
-import React from 'react';
-import '../styles/Menu.scss';
+import React, {useContext} from 'react';
+import '@styles/Menu.scss';
+import AppContext from '@context/AppContext';
 
 const Menu = () => {
+  const {state} = useContext(AppContext);
+  let classMenu;
+
+  if(state.toggleOrders) {
+    classMenu = "menu displayedOrders";
+  } else {
+    classMenu = "menu";
+  };
+
   return (
-    <div className="menu">
+    <div className={classMenu} >
       <ul>
         <li>
           <a href="/" className="menu-title">

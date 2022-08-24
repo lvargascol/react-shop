@@ -1,7 +1,7 @@
 @import 'vars';
 
 .menu {
-    width: 100px;
+    width: auto;
     height: auto;
     border: 1px solid var(--very-light-pink);
     border-radius: 4px;
@@ -12,6 +12,10 @@
     background-color: var(--white);
 }
 
+.displayedOrders {
+    right: 360px;
+}
+
 .menu ul {
     list-style: none;
     padding: 0;
@@ -20,6 +24,7 @@
 
 .menu ul li {
     text-align: end;
+    width: fit-content;
 }
 
 .menu ul li:last-child {
@@ -34,6 +39,7 @@
     font-size: var(--md);
     font-weight: bold;
     margin-bottom: 20px;
+    white-space: nowrap;
 }
 
 .menu ul li:last-child a {
@@ -41,4 +47,11 @@
     font-size: var(--sm);
     font-weight: 500;
     margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .menu {
+        display: none;
+    }
+
 }
